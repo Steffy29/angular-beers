@@ -1,0 +1,27 @@
+import { Component } from '@angular/core';
+import { FilterArrayPipe } from '../pipes/filter-array-pipe';
+import { OrderByPipe } from '../pipes/orderby-pipe';
+import { BeerService } from '../beers.service';
+
+@Component({
+    selector: 'beer-list',
+    templateUrl: './beerList.html',
+    providers: [FilterArrayPipe, OrderByPipe, BeerService]
+})
+
+export class BeerListComponent {
+    orderProp = 'alcohol';
+    beers = [];
+    mode = 'Promise';
+
+    constructor(private beerService: BeerService) { }
+
+    ngOnInit() {
+        this.getBeers();
+    }
+
+    getBeers() {
+        this.beers = this.beerService.getBeers();
+    }
+
+}
