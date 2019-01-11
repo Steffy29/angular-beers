@@ -58,6 +58,14 @@ Add style to the display with [Bootstrap](https://getbootstrap.com/).
 
 First install dependencies `npm install bootstrap font-awesome`.
 
+Adding link to the `angular.json` file.
+```
+"styles": [
+    "src/styles.css",
+    "node_modules/bootstrap/dist/css/bootstrap.min.css"
+],
+```
+
 Adding import into `src/styles.css`
 ```CSS
 @import "~bootstrap/dist/css/bootstrap.css";
