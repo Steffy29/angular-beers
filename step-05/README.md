@@ -101,8 +101,7 @@ import { BeerService } from '../beers.service';
 @Component({
  selector: 'beer-list',
  templateUrl: './app/beerlist/beerList.html',
- pipes: [FilterArrayPipe, OrderByPipe],
- providers: [BeerService]
+ providers: [FilterArrayPipe, OrderByPipe, BeerService]
 })
 
 export class BeerList {
