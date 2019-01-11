@@ -6,7 +6,7 @@ So the objective is to add links and images of the beers in the list.
 
 ## Data ##
 
-Note that the `beers.json` file contains unique ids and image urls for each of the beers. The urls point to the `app/beers/img` directory.
+Note that the `beers.json` file contains unique ids and image urls for each of the beers. The urls point to the `assets/img//img` directory.
 
 `app/beers/beers.json`:
 
@@ -17,7 +17,7 @@ Note that the `beers.json` file contains unique ids and image urls for each of t
     "alcohol": 6.8,
     "description": "A reddish-brown abbey ale brewed with dark malts. The secondary fermentation gives a fruity aroma and a unique spicy character with a distinctive aftertaste. Secondary fermentation in the bottle.",
     "id": "AffligemDubbel",
-    "img": "beers/img/AffligemDubbel.jpg",
+    "img": "assets/img/AffligemDubbel.jpg",
     "name": "Affligem Dubbel"
   },
   ...
@@ -27,7 +27,7 @@ Note that the `beers.json` file contains unique ids and image urls for each of t
 
 ## Template ##
 
-Copy the directory `beers/img` into `src/assets` to have access to images into page.
+Copy the directory `assets/img` into `src/assets` to have access to images into page.
 
 To dynamically generate links that will in the future lead to beer detail pages, we used the now-familiar double-curly brace binding in the href attribute values. In step 2, we added the `{{beer.name}}` binding as the element content. In this step the `{{beer.id}}` binding is used in the element attribute.
 
