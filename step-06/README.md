@@ -54,9 +54,16 @@ We also added beer images next to each record using an `img` tag with the `[src]
 
 ## Experiments ##
 
-Replace the `[src]` directive with a plain old `src` attribute. Using tools such as Firebug, or Chrome's Web Inspector, or inspecting the webserver access logs, confirm that the app is indeed making an extraneous request to `/app/%7B%7Bbeer.img%7D%7D` (or `/app/{{beer.img}}`).
+Add style to the display with [Bootstrap](https://getbootstrap.com/).
 
-The issue here is that the browser will fire a request for that invalid image address as soon as it hits the img tag, which is before Angular has a chance to evaluate the expression and inject the valid address.
+First install dependencies `npm install bootstrap font-awesome`.
+
+Adding import into `src/styles.css`
+```CSS
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+```
+
 
 ## Summary ##
 
