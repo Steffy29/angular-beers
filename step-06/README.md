@@ -1,12 +1,12 @@
-# AngularBeer - Angular tutorial - Step 06 #
+# AngularBeer - Angular tutorial - Step 06
 
 In this step, you will add thumbnail images for the beers in the beer list, and links that, for now, will go nowhere. In subsequent steps you will use the links to display additional information about the beers in the catalog.
 
 So the objective is to add links and images of the beers in the list.
 
-## Data ##
+## Data
 
-Note that the `beers.json` file contains unique ids and image urls for each of the beers. The urls point to the `assets/img//img` directory.
+Note that the `beers.json` file contains unique ids and image urls for each of the beers. The urls point to the `assets/img` directory.
 
 `app/beers/beers.json`:
 
@@ -24,8 +24,7 @@ Note that the `beers.json` file contains unique ids and image urls for each of t
 ]
 ```
 
-
-## Template ##
+## Template
 
 Copy the directory `assets/img` into `src/assets` to have access to images into page.
 
@@ -36,29 +35,35 @@ We also added beer images next to each record using an `img` tag with the `[src]
 `app/beerList/beerList.html`:
 
 ```html
-<div class="card" *ngFor="let beer of (beers | filter:query | orderby:orderProp)">
-    <div class="row">
-        <a href="#/beers/{{beer.id}}" class="col-sm-4 thumb">
-            <img class="img-thumbnail" [src]="beer.img" alt="Beer image"/>
-        </a>
-        <div class="col-sm-8 card-block">
-            <a href="#/beers/{{beer.id}}"><h4 class="card-title">{{beer.name}} <span
-                    class="tag tag-default">{{beer.alcohol}} °</span>
-            </h4></a>
-            <p class="card-text">{{beer.description}}</p>
-            <a href="#/beers/{{beer.id}}" class="btn btn-primary">Detail</a>
-        </div>
+<div
+  class="card"
+  *ngFor="let beer of (beers | filter:query | orderby:orderProp)"
+>
+  <div class="row">
+    <a href="#/beers/{{beer.id}}" class="col-sm-4 thumb">
+      <img class="img-thumbnail" [src]="beer.img" alt="Beer image" />
+    </a>
+    <div class="col-sm-8 card-block">
+      <a href="#/beers/{{beer.id}}"
+        ><h4 class="card-title">
+          {{beer.name}} <span class="tag tag-default">{{beer.alcohol}} °</span>
+        </h4></a
+      >
+      <p class="card-text">{{beer.description}}</p>
+      <a href="#/beers/{{beer.id}}" class="btn btn-primary">Detail</a>
     </div>
+  </div>
 </div>
 ```
 
-## Experiments ##
+## Experiments
 
 Add style to the display with [Bootstrap](https://getbootstrap.com/).
 
 First install dependencies `npm install bootstrap font-awesome`.
 
 Adding link to the `angular.json` file.
+
 ```
 "styles": [
     "src/styles.css",
@@ -67,12 +72,12 @@ Adding link to the `angular.json` file.
 ```
 
 Adding import into `src/styles.css`
+
 ```CSS
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 ```
 
-
-## Summary ##
+## Summary
 
 Now that you have added beer images and links, go to [step 7](../step-07) to learn about Angular layout templates and how Angular makes it easy to create applications that have multiple views.
