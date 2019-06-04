@@ -145,32 +145,6 @@ export class BeerList {
 
 Angular's dependency injector provides services to your controller when the controller is being constructed. The dependency injector also takes care of creating any transitive dependencies the service may have (services often depend upon other services).
 
-## Experiments ##
-
-At the bottom of `app/beerList/beerList.html`, add a `<pre>{{beers | json}}</pre>` binding to see the list of beers displayed in json format.
-
-At the top of `app/beerList/beerList.html`, add a
-
-```html
-<div class="alert alert-danger" role="alert" *ngIf="errorMessage">
-  <strong>Oh snap!</strong> {{errorMessage}}.
-</div>
-```
-
-to display an error message, you can test if by modifying the `beerUrl` in `app/beers.service.ts`.
-
-In the BeerList component, pre-process the http response by limiting the number of beers to the first 5 in the list.
-Use the following code in the `getBeers` callback:
-
-```typescript
-getBeers() {
-    this.beerService.getBeers()
-        .then(
-            beers => { this.beers = beers.splice(0, 5); },
-            error =>  this.errorMessage = <any>error);
-}
-```
-
 ## Summary ##
 
 Now that you have learned how easy it is to use Angular services (thanks to Angular's dependency injection), go to [step 6](../step-06), where you will add some thumbnail images of beers and some links.
