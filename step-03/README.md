@@ -4,7 +4,7 @@ We did a lot of work in laying a foundation for the app in the last step, so now
 
 We want to add a search box to the app, and we want the results on the beer list change according to what the user types into the search box.
 
-In Angular 1 you got `filter` and `orderBy`, thez do dot exist in angular 2 : [No FilterPipe or OrderByPipe](https://angular.io/docs/ts/latest/guide/pipes.html#!#no-filter-pipe)
+In Angular 1 you got `filter` and `orderBy`, they do not exist in angular 2 : [No FilterPipe or OrderByPipe](https://angular.io/docs/ts/latest/guide/pipes.html#!#no-filter-pipe)
 
 ## Pipe ##
 
