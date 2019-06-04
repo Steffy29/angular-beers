@@ -75,17 +75,39 @@ export class AppModule {
 }
 ```
 
+Create interface for beer description
+
+`app/beer.interface.ts` :
+
+```typescript
+export interface Beer {
+    alcohol: string,
+    description: string,
+    id: string,
+    img: string,
+    name: string,
+}
+```
+
+
 `app/beers.service.ts` :
 
 ```typescript
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Beer } from './beerList/beer.interface';
 
 @Injectable()
 export class BeerService {
-    beersJson = require('../beers/beers.json');
+    // URL to web API
+    beersUrl = 'assets/beers/beers.json';
 
-    getBeers() {
-        return this.beersJson;
+    constructor(private httpClient : HttpClient) {
+    }
+
+    getBeers(): Observable<any> {
+        return this.httpClient.get<Beer>(this.beersUrl);
     }
 }
 ```
@@ -113,13 +135,13 @@ export class BeerList {
 
  ngOnInit() { this.getBeers(); }
 
- getBeers() {
-     this.beers = this.beerService.getBeers();
- }
-
+  getBeers() {
+    this.beerService.getBeers().subscribe(data => {
+        this.beers = data
+    });
+  }
 }
 ```
-
 
 Angular's dependency injector provides services to your controller when the controller is being constructed. The dependency injector also takes care of creating any transitive dependencies the service may have (services often depend upon other services).
 

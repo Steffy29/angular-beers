@@ -3,3 +3,11 @@
 body {
     padding-top: 20px;
 }
+
+div.main {
+    padding-top: 20px;
+}
+
+.thumb img {
+    margin: 10px;
+}

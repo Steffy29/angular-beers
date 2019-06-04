@@ -21,7 +21,9 @@ export class BeerListComponent {
     }
 
     getBeers() {
-        this.beers = this.beerService.getBeers();
+        this.beerService.getBeers().subscribe(data => {
+            this.beers = data
+        });
     }
 
 }

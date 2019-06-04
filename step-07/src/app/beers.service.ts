@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Beer } from './beer.interface';
 
 @Injectable()
 export class BeerService {
-    beersJson = require('../beers/beers.json');
+    // URL to web API
+    beersUrl = 'assets/beers/beers.json';
 
-    getBeers() {
-        return this.beersJson;
+    constructor(private httpClient : HttpClient) {
+    }
+    
+    getBeers(): Observable<any> {
+        return this.httpClient.get<Beer>(this.beersUrl);
     }
 }
